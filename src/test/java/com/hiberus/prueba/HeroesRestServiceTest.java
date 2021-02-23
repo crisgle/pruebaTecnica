@@ -12,8 +12,6 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 import static org.hamcrest.Matchers.is;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import java.net.URI;
-
 import static org.hamcrest.MatcherAssert.assertThat;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.hiberus.prueba.model.Hero;
@@ -30,18 +28,6 @@ public class HeroesRestServiceTest {
 	  @BeforeEach
 	  public void setUp() {
 	    this.testRestTemplate = new TestRestTemplate();
-	  }
-	  
-	  
-	  @Test
-	  public void create_hero() {
-		  Hero hero = new Hero();
-		  hero.setName("Superman");
-		  hero.setDescription("Description");
-		  String url = "http://localhost:8080/api/heroes";
-		  Long result = this.testRestTemplate.postForObject(url, hero, Long.class);
-		  assertTrue(result!=null, "dfgdf");
-
 	  }
 	  
 	  @Test
